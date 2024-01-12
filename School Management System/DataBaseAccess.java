@@ -1,0 +1,19 @@
+import java.sql.*;
+
+public class DataBaseAccess {
+    // JDBC driver name and database URL
+
+    private static final String url = "jdbc:mysql://localhost:3306/school_management_system";
+    private static final String user = "root";
+    private static final String password = "";
+    private static final String driver = "com.mysql.cj.jdbc.Driver";
+    // Database credentials
+
+    Connection connection = null;
+
+    public Connection Connection() throws ClassNotFoundException, SQLException {
+        Class.forName(driver);
+        connection = DriverManager.getConnection(url, user, password);
+        return connection;
+    }
+}
